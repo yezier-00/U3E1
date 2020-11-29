@@ -1,0 +1,73 @@
+
+package pila;
+import java.util.Scanner;
+public class Pila {
+    Scanner sn=new Scanner(System.in);
+    int vector[]=new int[5];
+    int cima=-1;
+     public void insertar(){
+         if(cima>=vector.length-1){
+             System.out.println("pila llena:");
+         }else{
+             cima+=1;
+             System.out.println("ingrese dato ala pila:");
+             vector[cima]=sn.nextInt();
+         }//else                              
+   }//metodo insetar
+    public void eliminar(){
+    if(cima==-1){
+        System.out.println("pila vacia:");
+    }else{
+        System.out.println("se ha eliminado elemento:");
+        vector[cima]=0;
+    }    
+}//metodo eliminar 
+  public void mostrar(){
+    for(int cima=4;cima>=0;cima--){
+        System.out.println("Elementos de la pila es: "+vector[cima]);
+    }   
+}//metodo mostrar
+      public static void main(String[] args) {
+        
+        Scanner sn=new Scanner(System.in);
+        //int arreglo[]=null;
+
+        Pila pila = new Pila();
+        //List lista=new ArrayList();
+        //p.insertar();
+        //p.eliminar();
+        //p.mostrar();
+         boolean salir=false;
+        int opcion;
+        
+        while(!salir){
+            System.out.println("Dame una opcion del menu:");
+            System.out.println("1.-INSERTAR");
+            System.out.println("2.-ELIMINAR");
+            System.out.println("3.-MOSTRAR");
+            System.out.println("4.-SALIR:");
+               opcion=sn.nextInt();
+              
+            switch(opcion){
+                case 1:
+                   pila.insertar();                                                                                         
+                    break;
+                case 2:
+                    pila.eliminar();
+                    
+                    break;
+                case 3:
+                    pila.mostrar();
+                    break;
+                case 4:
+                    salir=true;
+                    break;
+                default:   
+                    System.out.println("La opcion no esta en el menu:");
+        }//switch
+        }//while                                              
+        System.out.println("Final del programa:");
+    }//main
+}//class
+    
+//ZAMORA ESPARZA YEZIER CRUZ
